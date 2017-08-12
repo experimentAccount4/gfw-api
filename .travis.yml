@@ -23,8 +23,8 @@ install:
 before_script:
   - sh setup.sh
 script:
-  - nosetests --with-gae --without-sandbox test --with-cprofile --cprofile-stats-erase --cprofile-stats-file=profile_gfw-api_50753c6590_1
-  - python -m properform Push 47.88.50.110:15554 asdf_gfw-api_50753c6590_1 ./profile_gfw-api_50753c6590_1
+  - nosetests --with-gae --without-sandbox test --with-cprofile --cprofile-stats-erase --cprofile-stats-file=profile_gfw-api_50753c6590_2
+  - python -m properform Push 47.88.50.110:15554 asdf_gfw-api_50753c6590_2 ./profile_gfw-api_50753c6590_2
 
 
- #2017-08-12 19:26:00 modified at 0 #2017-08-12 19:26:06 modified at 1
+ #2017-08-12 19:26:00 modified at 0 #2017-08-12 19:26:06 modified at 1 #2017-08-12 19:26:12 modified at 2
