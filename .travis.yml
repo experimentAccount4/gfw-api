@@ -4,7 +4,27 @@ python:
 cache:
   directories:
   - $HOME/google_appengine_*
+
+before_install:
+   # add for profile
+  - sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
+  - sudo apt-get update -qq
+
+
+install:
+# add for profile
+  - sudo apt-get install -qq g++-4.8
+  - export CXX="g++-4.8"
+  - pip install nose-cprof
+  - pip install properform
+
+
+
 before_script:
   - sh setup.sh
 script:
-  - nosetests --with-gae --without-sandbox test
+  - nosetests --with-gae --without-sandbox test --with-cprofile --cprofile-stats-erase --cprofile-stats-file=profile_gfw-api_b81ebd873a_0
+  - python -m properform Push 47.88.50.110:15554 asdf_gfw-api_b81ebd873a_0 ./profile_gfw-api_b81ebd873a_0
+
+
+ #2017-08-12 19:23:24 modified at 0
